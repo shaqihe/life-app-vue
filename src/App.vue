@@ -1,8 +1,13 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
-  </div>
+<template lang="html">
+    <div>
+      <router-link to="/index" ><span class="icon-shouye iconfont "></span><p>首页</p></router-link>
+       <router-link to="/happy" ><span class="icon-xitongcaidan iconfont "></span><p>分类</p></router-link>
+        <transition :name="transition">
+            <router-view class="router-view"></router-view>
+        </transition>
+        <cvLoading :show="loading"></cvLoading>
+        <cvBacktotop></cvBacktotop>
+    </div>
 </template>
 
 <script>
