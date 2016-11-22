@@ -1,18 +1,22 @@
 <template>
-  <div class="hello">
-  开心一刻网页
-    <div class="divtest">22132</div>
-  </div>
+    <div>
+        <page-header/>
+        <div>
+        开心一刻网页
+        </div>
+    </div>
 </template>
 
 <script>
+import pageHeader from '../components/Header'
 export default {
-  name: 'hello',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+    name: 'happy',
+    data () {
+        return {}
+    },
+    components: {
+        pageHeader
     }
-  }
 }
 </script>
 

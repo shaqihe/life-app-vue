@@ -7,13 +7,9 @@
 </template>
 
 <script>
-import Hello from './components/Hello'
-
+import "./assets/scss/base.scss";
 export default {
   name: 'app',
-  components: {
-    Hello
-  }
 }
 </script>
 
