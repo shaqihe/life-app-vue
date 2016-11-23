@@ -36,10 +36,11 @@ const routes = [
         }
     },
     {
-        path: '*',
-        redirect: {
-            name: "index",
-        },
+      path: "/weather",
+      name: "weather",
+      component: (resolve) => {
+          require(["../pages/weather.vue"], resolve);
+      }
     }
 ];
 

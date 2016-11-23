@@ -2,7 +2,7 @@
     <div>
         <page-header :pageType="pageType" />
         <div>
-        开心一刻网页
+        天气预报专区
         </div>
     </div>
 </template>
@@ -15,7 +15,7 @@ export default {
     name: 'happy',
     data () {
         return {
-            pageType: PAGE_TYPE.HAPPY_PAGE
+            pageType: PAGE_TYPE.WEATHER_PAGE
         }
     },
     components: {

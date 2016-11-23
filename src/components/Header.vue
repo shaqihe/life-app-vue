@@ -24,9 +24,23 @@
                 <i class="icon iconfont">&#xe612;</i> 陪伴你的左右
             </div>
             <ul>
-                <li><i class="icon iconfont">&#xe65f;</i>开心一刻</li>
-                <li><i class="icon iconfont">&#xe766;</i>生活出行</li>
-                <li><i class="icon iconfont">&#xe600;</i>天气预报</li>
+                <li>
+                    <router-link to="/happy" >
+                        <i class="icon iconfont">&#xe65f;</i>开心一刻
+                    </router-link>
+                </li>
+                <li>
+
+                    <router-link to="/weather" >
+                        <i class="icon iconfont">&#xe766;</i>生活出行
+                    </router-link>
+                </li>
+                <li>
+
+                    <router-link to="/weather" >
+                        <i class="icon iconfont">&#xe600;</i>天气预报
+                    </router-link>
+                </li>
             </ul>
         </section>
     </div>
@@ -97,6 +111,16 @@
         }
     }
 }
+
+.weather-page {
+    .nv-toolbar {
+        background-color: #478adb;
+        .page-text {
+            color: #fff;
+        }
+    }
+}
+
 .nav-list {
     position: fixed;
     top: 0;
@@ -132,6 +156,9 @@
         width: 170px;
         margin-left: 25px;
         li {
+            a {
+                color: #7f8c8d;
+            }
             i {
                 margin-right: 30px;
             }
