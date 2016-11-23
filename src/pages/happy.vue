@@ -1,6 +1,6 @@
 <template>
     <div>
-        <page-header/>
+        <page-header :pageType="开心一刻" />
         <div>
         开心一刻网页
         </div>
