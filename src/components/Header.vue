@@ -48,9 +48,10 @@
 </script>
 
 <style lang="scss">
+@import "../assets/scss/min.scss";
 .toolbar-nav {
-    height: 80px;
-    line-height: 80px;
+    height: px2rem(80);
+    line-height: px2rem(80);
     background: #478adb;
 }
 

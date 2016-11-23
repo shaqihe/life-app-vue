@@ -7,13 +7,15 @@
 </template>
 
 <script>
-import "./assets/scss/base.scss";
+
 export default {
   name: 'app',
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./assets/scss/base.scss";
+
     body {
 
     }
