@@ -10,21 +10,23 @@
  */
 
 <template>
-    <div>
+    <div :class="pageType.className">
         <div class="page-cover"
             v-if="showMenu"
             @click="showMenus">weewe
         </div>
-        <div class="nv-toolbar" :class="{ 'nv-toolbar-happy': pageType=1}">
+        <div class="nv-toolbar">
             <div class="toolbar-nav" @click="showMenus"></div>
-            <span class="page-text" v-text="pageType"></span>
+            <span class="page-text" v-text="pageType.text"></span>
         </div>
         <section class="nav-list" :class="{ show: showMenu }">
+            <div class="nav-list-title">
+                <i class="icon iconfont">&#xe612;</i> 陪伴你的左右
+            </div>
             <ul>
-                <li>全部</li>
-                <li>开心一刻</li>
-                <li>生活出行</li>
-                <li>关于</li>
+                <li><i class="icon iconfont">&#xe65f;</i>开心一刻</li>
+                <li><i class="icon iconfont">&#xe766;</i>生活出行</li>
+                <li><i class="icon iconfont">&#xe600;</i>天气预报</li>
             </ul>
         </section>
     </div>
@@ -87,11 +89,12 @@
 
 }
 
-.nv-toolbar-happy {
-    background-color: #ffba15;
-
-    .page-text {
-        color: #fff;
+.happy-page {
+    .nv-toolbar {
+        background-color: #ffba15;
+        .page-text {
+            color: #fff;
+        }
     }
 }
 .nav-list {
@@ -106,6 +109,44 @@
     z-index: 99;
     &.show{
         transform: translateX(200px);
+    }
+
+    .nav-list-title {
+        margin-left: 25px;
+        font-size: 16px;
+        color: #333;
+        padding: px2rem(30) 0;
+        height: px2rem(80);
+        line-height: px2rem(80);
+        border-bottom: 1px solid #d4d4d4;
+        margin-right: 25px;
+        margin-bottom: 20px;
+        .icon {
+            margin-right: 5px;
+            font-size: 20px;
+            color: #db2c0b;
+        }
+    }
+
+    ul {
+        width: 170px;
+        margin-left: 25px;
+        li {
+            i {
+                margin-right: 30px;
+            }
+            margin-right: 25px;
+            font-size: 14px;
+            color: #7f8c8d;
+            padding: px2rem(28) 0;
+            &:hover {
+                i {
+                    color: #db2c0b;
+                }
+                color: #333;
+                border-bottom: 1px solid #d4d4d4;
+            }
+        }
     }
 }
 

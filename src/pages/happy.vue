@@ -1,6 +1,6 @@
 <template>
     <div>
-        <page-header :pageType="开心一刻" />
+        <page-header :pageType="pageType" />
         <div>
         开心一刻网页
         </div>
@@ -9,10 +9,14 @@
 
 <script>
 import pageHeader from '../components/Header'
+import {PAGE_TYPE} from '../common/constant/constant';
+
 export default {
     name: 'happy',
     data () {
-        return {}
+        return {
+            pageType: PAGE_TYPE.WEATHER_PAGE
+        }
     },
     components: {
         pageHeader

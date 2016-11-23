@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss">
 @import "./assets/scss/base.scss";
-
+@import "./assets/scss/icon/iconfont.css";
     body {
         padding-top: 44px;
     }
