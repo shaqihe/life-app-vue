@@ -3,7 +3,7 @@
         <page-header :pageType="pageType" />
         <div>
         开心一刻网页
-        </div>
+        </div>3e21eq
     </div>
 </template>
 
@@ -26,9 +26,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-.hello {
-    .divtest {
-        font-size: 30px;
-    }
-}
+
 </style>

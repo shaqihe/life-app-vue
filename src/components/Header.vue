@@ -37,7 +37,7 @@
                 </li>
                 <li>
 
-                    <router-link to="/weather" >
+                    <router-link to="/about" >
                         <i class="icon iconfont">&#xe600;</i>天气预报
                     </router-link>
                 </li>
@@ -159,6 +159,12 @@
             a {
                 color: #7f8c8d;
             }
+            .router-link-active {
+                i {
+                    color: #db2c0b;
+                }
+                color: #4a3dd5;
+            }
             i {
                 margin-right: 30px;
             }
@@ -166,13 +172,6 @@
             font-size: 14px;
             color: #7f8c8d;
             padding: px2rem(28) 0;
-            &:hover {
-                i {
-                    color: #db2c0b;
-                }
-                color: #333;
-                border-bottom: 1px solid #d4d4d4;
-            }
         }
     }
 }

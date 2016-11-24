@@ -7,16 +7,43 @@
 </template>
 
 <script>
+import "./assets/scss/animation.scss";
+import "./assets/scss/base.scss";
+import "./assets/scss/icon/iconfont.css";
 
 export default {
-  name: 'app',
+name: 'app',
+data (){
+    return {
+        transition: "slide-left"
+    };
+},
+  watch: {
+    "$route"(to, from){
+        this.transition = this.checkDirecition(to.name, from.name) && "slide-left" || "slide-right";
+    }
+    },
+    methods: {
+        checkDirecition(to, from) {
+            let map = ["index", "happy", "weather", "about", "message"];
+            return (map.indexOf(to) - map.indexOf(from)) > 0;
+        }
+    },
 }
 </script>
 
 <style lang="scss">
-@import "./assets/scss/base.scss";
-@import "./assets/scss/icon/iconfont.css";
+    @import "./assets/scss/min.scss";
     body {
-        padding-top: 44px;
+        padding-top: px2rem(88)!important;
+        background: #f7f7f7;
+    }
+    .router-view{
+        width: 100%;
+        -webkit-transition: all .9s cubic-bezier(.55,0,.1,1);
+        -moz-transition: all .9s cubic-bezier(.55,0,.1,1);
+        -ms-transition: all .9s cubic-bezier(.55,0,.1,1);
+        -o-transition: all .9s cubic-bezier(.55,0,.1,1);
+        transition: all .9s cubic-bezier(.55,0,.1,1);
     }
 </style>

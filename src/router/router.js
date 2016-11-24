@@ -41,7 +41,13 @@ const routes = [
       component: (resolve) => {
           require(["../pages/weather.vue"], resolve);
       }
-    }
+    },
+    {
+        path: '*',
+        redirect: {
+            name: "index",
+        },
+    },
 ];
 
 /**
