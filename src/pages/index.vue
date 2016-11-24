@@ -27,7 +27,7 @@
         heigth: 100%;
     }
     .spinner {
-        margin: 100px auto;
+        margin: 50px auto;
         width: 50px;
         height: 60px;
         text-align: center;

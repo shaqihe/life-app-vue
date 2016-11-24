@@ -35,11 +35,12 @@ data (){
 <style lang="scss">
     @import "./assets/scss/min.scss";
     body {
-        padding-top: px2rem(88)!important;
         background: #f7f7f7;
     }
+
     .router-view{
         width: 100%;
+        position: absolute;
         -webkit-transition: all .9s cubic-bezier(.55,0,.1,1);
         -moz-transition: all .9s cubic-bezier(.55,0,.1,1);
         -ms-transition: all .9s cubic-bezier(.55,0,.1,1);

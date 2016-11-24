@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page-weather">
         <page-header :pageType="pageType" />
         <div>
         天气预报专区
@@ -26,9 +26,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-.hello {
-    .divtest {
-        font-size: 30px;
+    @import "../assets/scss/min.scss";
+    .page-weather {
+        padding-top: px2rem(88)!important;
     }
-}
 </style>
