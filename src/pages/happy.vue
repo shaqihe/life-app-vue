@@ -11,7 +11,8 @@
 <script>
 import pageHeader from '../components/Header'
 import Loading from '../components/Loading'
-import {PAGE_TYPE} from '../common/constant/constant';
+import {PAGE_TYPE} from '../common/constant/constant'
+import HappyList from '../cache/cache'
 
 export default {
     name: 'happy',
@@ -20,6 +21,12 @@ export default {
             pageType: PAGE_TYPE.HAPPY_PAGE,
             loading: false
         }
+    },
+    ready () {
+        msgService.getHappyList({qqq:2222}).then(
+            list => {alert("werew")},
+            error => {alert(error)},
+        );
     },
     components: {
         pageHeader,Loading
