@@ -14,17 +14,17 @@ import 'whatwg-fetch';
 /**
  *  开心一刻页面的相关接口
  */
-let HappyList = {
+const HappyListCache = {
 
     /**
      * @param  {Object} Data
      * @return {Promise}
      */
     getHappyList(data) {
-        return fetch('api/joke/content/text.from?&key=ec451dc7ad29d93c72de5f281123a496&'+parseParam(data));
+        return fetch('api/joke/content/text.from?&key=ec451dc7ad29d93c72de5f281123a496&'+parseParam(data))
+        .then(response => response.json()).then(response => response.result.data);
     }
 }
-
 
 /**
  *  简单封装把对象转换场url参数的字符串
@@ -46,4 +46,4 @@ function parseParam(obj) {
 }
 
 // 实例化后再导出
-export default HappyList
+export default HappyListCache

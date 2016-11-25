@@ -12,16 +12,16 @@ import "./assets/scss/base.scss";
 import "./assets/scss/icon/iconfont.css";
 
 export default {
-name: 'app',
-data (){
-    return {
-        transition: "slide-left"
-    };
-},
-  watch: {
-    "$route"(to, from){
-        this.transition = this.checkDirecition(to.name, from.name) && "slide-left" || "slide-right";
-    }
+    name: 'app',
+    data (){
+        return {
+            transition: "slide-left"
+        };
+    },
+    watch: {
+        "$route"(to, from){
+            this.transition = this.checkDirecition(to.name, from.name) && "slide-left" || "slide-right";
+        }
     },
     methods: {
         checkDirecition(to, from) {
