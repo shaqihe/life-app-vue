@@ -22,10 +22,14 @@ export default {
             loading: false
         }
     },
-    ready () {
-        msgService.getHappyList({qqq:2222}).then(
-            list => {alert("werew")},
-            error => {alert(error)},
+    created() {
+        HappyList.getHappyList(
+          {
+            pagesize:10,
+            page:1
+          }).then(
+            list => {console.log(list)},
+            error => {},
         );
     },
     components: {
