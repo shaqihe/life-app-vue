@@ -21,8 +21,8 @@
                     </p>
                 </div>
                 <div class="happy-item-content">
-                    <img :src="item.url" v-show='item.url'>
                     {{item.content}}
+                    <img :src="item.url" v-show='item.url'>
                 </div>
             </li>
         </ul>
@@ -177,6 +177,7 @@ export default {
             line-height: 150%;
             padding-bottom: 20px;
             img {
+                margin-top: 10px;
                 width: 100%;
             }
         }
