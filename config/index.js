@@ -28,7 +28,15 @@ module.exports = {
           pathRewrite: {
             '^/api': '/'
           }
-        }
+        },
+        '/rand': {
+          target: 'http://v.juhe.cn',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/rand': '/'
+          }
+        },
+
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

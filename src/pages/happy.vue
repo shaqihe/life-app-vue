@@ -15,7 +15,7 @@
         <ul class="posts-list">
             <li v-for="item in list" class="happy-item">
                 <div class="happy-item-title">
-                    <img src="http://pic.qiushibaike.com/system/avtnew/2479/24796558/thumb/20150623181015.jpg?imageView2/1/w/90/h/90">
+                    <img :src="randomImg()">
                     <p class="happy-item-name">
                         {{randomFont()}}
                     </p>
@@ -67,6 +67,10 @@ export default {
             return random.randomFont(3, 10);
         },
 
+        //随机生成作者头像
+        randomImg() {
+            return 'http://7xqd2y.com1.z0.glb.clouddn.com/images' + random.randomNum(1, 29) + '.jpg';
+        },
         //切换类型
         changeType(val) {
             this.happyType = val;
@@ -76,7 +80,7 @@ export default {
         //获取列表
         getHappyList(isClear) {
             this.loading = true;
-            HappyListCache.getHappyList({pagesize: this.PAGE_SIZE,page: this.page, happyType: this.happyType})
+            HappyListCache.getHappyList({pagesize: this.PAGE_SIZE,page: this.page,happyType: this.happyType})
             .then(
                 data=> {
                     if (isClear) {
