@@ -10,6 +10,7 @@
  */
 
 import 'whatwg-fetch';
+import {HAPPY_TYPE} from '../common/constant/constant';
 
 /**
  *  开心一刻页面的相关接口
@@ -21,8 +22,24 @@ const HappyListCache = {
      * @return {Promise}
      */
     getHappyList(data) {
-        return fetch('api/joke/content/text.from?&key=ec451dc7ad29d93c72de5f281123a496&'+parseParam(data))
-        .then(response => response.json()).then(response => response.result.data);
+        let key = '?&key=ec451dc7ad29d93c72de5f281123a496&';
+
+        switch(data.happyType)
+        {
+        case HAPPY_TYPE.TEXT:
+            return fetch('api/joke/content/text.from' + key + parseParam(data))
+            .then(response => response.json()).then(response => response.result.data);
+            break;
+        case HAPPY_TYPE.IMAGE:
+            return fetch('api/joke/img/text.from' + key + parseParam(data))
+            .then(response => response.json()).then(response => response.result.data);
+            break;
+        case HAPPY_TYPE.OTHER:
+            return fetch('api/joke/content/text.from' + key + parseParam(data))
+            .then(response => response.json()).then(response => response.result.data);
+            break;
+        }
+
     }
 }
 

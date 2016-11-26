@@ -1,18 +1,15 @@
 <template>
     <div class="page-happy">
-        <page-header :pageType="pageType" @click="www"/>
+        <page-header :pageType="pageType" />
         <!-- 首页列表 -->
         <nav class="page-happy－nav">
             <div class="top-bar">
-                <router-link :to="{ name: 'happy', params: { happyType: 1 }}">
-                    <span>混合</span>
-                </router-link>
-                <router-link :to="{ name: 'happy', params: { happyType: 2 }}" >
-                    <span>段子</span>
-                </router-link>
-                <router-link :to="{ name: 'happy', params: { happyType: 3 }}" >
+                <a @click="changeType(HAPPY_TYPE.IMAGE)" :class="{activeType: happyType == HAPPY_TYPE.IMAGE }">
                     <span>趣图</span>
-                </router-link>
+                </a>
+                <a @click="changeType(HAPPY_TYPE.TEXT)" :class="{activeType: happyType == HAPPY_TYPE.TEXT }">
+                    <span>段子</span>
+                </a>
             </div>
         </nav>
         <ul class="posts-list">
@@ -24,6 +21,7 @@
                     </p>
                 </div>
                 <div class="happy-item-content">
+                    <img :src="item.url" alt="">
                     {{item.content}}
                 </div>
             </li>
@@ -38,6 +36,7 @@ import pageHeader from '../components/Header'
 import loadMore from '../components/LoadMore'
 import goTop from '../components/GoTop'
 import {PAGE_TYPE} from '../common/constant/constant'
+import {HAPPY_TYPE} from '../common/constant/constant'
 import random from '../common/util/random'
 import HappyListCache from '../cache/cache'
 
@@ -46,7 +45,9 @@ export default {
     data () {
         return {
             PAGE_SIZE: 10,
+            HAPPY_TYPE: HAPPY_TYPE,
             pageType: PAGE_TYPE.HAPPY_PAGE,
+            happyType: HAPPY_TYPE.IMAGE, //
             loading: false,
             page: 1,
             list:[]
@@ -56,8 +57,8 @@ export default {
         this.getHappyList();
     },
     watch: {
-        "$route"(to, from) {alert()
-            console.log(from.params);
+        "happyType"(value){
+            this.getHappyList(true);
         }
     },
     methods: {
@@ -65,15 +66,22 @@ export default {
         randomFont() {
             return random.randomFont(3, 10);
         },
-        www(){
-            this.$route.params.happyType = 3;
+
+        //切换类型
+        changeType(val) {
+            this.happyType = val;
+            this.page = 1;
         },
+
         //获取列表
-        getHappyList() {
+        getHappyList(isClear) {
             this.loading = true;
-            HappyListCache.getHappyList({pagesize: this.PAGE_SIZE,page: this.page})
+            HappyListCache.getHappyList({pagesize: this.PAGE_SIZE,page: this.page, happyType: this.happyType})
             .then(
                 data=> {
+                    if (isClear) {
+                        this.list = [];
+                    }
                     this.list = this.list.concat(data);
                     this.loading = false;
                 },
@@ -84,6 +92,7 @@ export default {
         },
         //加载下一页
         loadMore() {
+            this.page++;
             this.getHappyList();
         }
     },
@@ -107,19 +116,25 @@ export default {
         height: px2rem(88);
         line-height: px2rem(88);
         background: #fff;
-        width: 100%;
         border-top: 1px solid transparent;
         border-bottom: 1px solid #eaeaea;
         a {
             display: block;
-            height: 44px;
-            line-height: 44px;
+            height: px2rem(88);
+            line-height: px2rem(88);
             float: left;
             text-align: center;
             font-weight: 400;
             font-size: 14px;
-            width: 16.66%;
+            width: 49%;
             color: #333;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .activeType {    cursor: pointer;
+            border-bottom: 2px solid #ffba15;
         }
     }
 
@@ -161,6 +176,9 @@ export default {
             color: #464646;
             line-height: 150%;
             padding-bottom: 20px;
+            img {
+                width: 100%;
+            }
         }
 
     }

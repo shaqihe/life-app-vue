@@ -9,8 +9,6 @@
  * ----------------------------------------------------------
  */
 
-
-
 /**
  * 页面类型的一些常量
  *
@@ -29,4 +27,18 @@ export const PAGE_TYPE = {
         className: "weather-page",
         value: 2
     }
+};
+
+/**
+ * 开心一刻列表类型
+ *
+ */
+export const HAPPY_TYPE = {
+    //段子
+    TEXT: 1,
+    //图片
+    IMAGE: 2,
+    //混合
+    OTHER: 3
+
 };
