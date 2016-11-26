@@ -80,12 +80,12 @@ export default {
         //获取列表
         getHappyList(isClear) {
             this.loading = true;
+            if (isClear) {
+                this.list = [];
+            }
             HappyListCache.getHappyList({pagesize: this.PAGE_SIZE,page: this.page,happyType: this.happyType})
             .then(
                 data=> {
-                    if (isClear) {
-                        this.list = [];
-                    }
                     this.list = this.list.concat(data);
                     this.loading = false;
                 },
