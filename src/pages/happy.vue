@@ -21,7 +21,7 @@
                     </p>
                 </div>
                 <div class="happy-item-content">
-                    <img :src="item.url" alt="">
+                    <img :src="item.url" v-show='item.url'>
                     {{item.content}}
                 </div>
             </li>
