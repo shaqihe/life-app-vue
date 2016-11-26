@@ -69,7 +69,7 @@ export default {
 
         //随机生成作者头像
         randomImg() {
-            return 'http://7xqd2y.com1.z0.glb.clouddn.com/images' + random.randomNum(1, 29) + '.jpg';
+            return 'http://7xqd2y.com1.z0.glb.clouddn.com/images' + random.randomNum(1, 28) + '.jpg';
         },
         //切换类型
         changeType(val) {
