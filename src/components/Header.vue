@@ -103,24 +103,6 @@
 
 }
 
-.happy-page {
-    .nv-toolbar {
-        background-color: #ffba15;
-        .page-text {
-            color: #fff;
-        }
-    }
-}
-
-.weather-page {
-    .nv-toolbar {
-        background-color: #478adb;
-        .page-text {
-            color: #fff;
-        }
-    }
-}
-
 .nav-list {
     position: fixed;
     top: 0;
