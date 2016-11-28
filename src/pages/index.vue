@@ -1,7 +1,7 @@
 <template>
     <!-- 全局header -->
     <div>
-        <img class="index" src="../assets/images/5.jpg">
+        <img class="index" src="../assets/images/5.jpeg">
         <loading></loading>
     </div>
 </template>
