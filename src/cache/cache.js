@@ -45,6 +45,23 @@ const HappyListCache = {
 }
 
 /**
+ *  天气相关的接口
+ */
+const weatherCache = {
+
+    /**
+     * 天气相关的接口
+     * @param  {Object} Data
+     * @return {Promise}
+     */
+    getWeather(data) {
+        let key = '?key=7cc263ec409e69b4aeb54b55639bcc87&cityname=%E5%8C%97%E4%BA%AC&dtype=';
+        return fetch('op/onebox/weather/query' + key + parseParam(data))
+            .then(response => response.json()).then(response => response.result.data);
+    }
+}
+
+/**
  *  简单封装把对象转换场url参数的字符串
  *  @return {String}
  */

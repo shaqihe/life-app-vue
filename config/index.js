@@ -36,6 +36,13 @@ module.exports = {
             '^/rand': '/'
           }
         },
+        '/op': {
+          target: 'http://op.juhe.cn',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/op': '/'
+          }
+        },
 
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
