@@ -15,7 +15,7 @@ import {HAPPY_TYPE} from '../common/constant/constant';
 /**
  *  开心一刻页面的相关接口
  */
-const HappyListCache = {
+export  const HappyListCache = {
 
     /**
      * 这个接口比较蛋疼，用的开源的接口，不同的接口规律也不一样
@@ -47,7 +47,7 @@ const HappyListCache = {
 /**
  *  天气相关的接口
  */
-const weatherCache = {
+export  const WeatherCache = {
 
     /**
      * 天气相关的接口
@@ -80,5 +80,3 @@ function parseParam(obj) {
     return paramStr;
 }
 
-// 实例化后再导出
-export default HappyListCache

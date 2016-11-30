@@ -10,16 +10,28 @@
 <script>
 import pageHeader from '../components/Header'
 import {PAGE_TYPE} from '../common/constant/constant';
+import {WeatherCache} from '../cache/cache'
 
 export default {
     name: 'happy',
-    data () {
+    data() {
         return {
             pageType: PAGE_TYPE.WEATHER_PAGE
         }
     },
     components: {
         pageHeader
+    },
+    created() {
+        this.getWeather();
+    },
+    methods: {
+        getWeather() {
+            WeatherCache.getWeather().then(
+                data => {console.log(data)},
+                error => {console.log(error)}
+            );
+        }
     }
 }
 </script>

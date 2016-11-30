@@ -38,7 +38,7 @@ import goTop from '../components/GoTop'
 import {PAGE_TYPE} from '../common/constant/constant'
 import {HAPPY_TYPE} from '../common/constant/constant'
 import random from '../common/util/random'
-import HappyListCache from '../cache/cache'
+import {HappyListCache} from '../cache/cache'
 
 export default {
     name: 'happy',
