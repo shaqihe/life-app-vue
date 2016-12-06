@@ -1,3 +1,13 @@
+/**
+ * ----------------------------------------------------------
+ * 开心一刻页面
+ *
+ * @version  1.0
+ * @author shaqihe(shaqihecome@163.com)
+ *
+ * @module src/pages/happy
+ * ----------------------------------------------------------
+ */
 <template>
     <div class="page-happy">
         <page-header :pageType="pageType" />
