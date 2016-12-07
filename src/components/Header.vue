@@ -37,7 +37,7 @@
                 </li>
                 <li>
 
-                    <router-link to="/about" >
+                    <router-link to="/weather" >
                         <i class="icon iconfont">&#xe600;</i>天气预报
                     </router-link>
                 </li>

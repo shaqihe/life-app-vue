@@ -11,8 +11,8 @@
 <template>
     <div class="page-weather">
         <page-header :pageType="pageType" />
-        <div>
-        天气预报专区
+        <div v-if="weather && weather.realtime && weather.weather">
+            {{weather.realtime.city_name}}
         </div>
     </div>
 </template>
@@ -26,7 +26,8 @@ export default {
     name: 'happy',
     data() {
         return {
-            pageType: PAGE_TYPE.WEATHER_PAGE
+            pageType: PAGE_TYPE.WEATHER_PAGE,
+            weather: {}
         }
     },
     components: {
@@ -38,7 +39,7 @@ export default {
     methods: {
         getWeather() {
             WeatherCache.getWeather().then(
-                data => {console.log(data)},
+                data => {this.weather = data;},
                 error => {console.log(error)}
             );
         }
