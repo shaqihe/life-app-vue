@@ -86,7 +86,7 @@ export default {
 <style lang="scss">
     @import "../assets/scss/min.scss";
     .page-weather {
-        padding-top: px2rem(78)!important;
+        padding-top: px2rem(88)!important;
         height: 100%;
         background-image: -webkit-linear-gradient(top,#0c264d 0%,#205d91 60%,#2568a1 100%);
         .page-weather-content {
@@ -94,7 +94,7 @@ export default {
         }
 
         .page-weather-cityrow {
-            margin-top: px2rem(200);
+            margin-top: px2rem(100);
             text-align: right;
             padding: 0 px2rem(32);
             text-shadow: 1px 1px 0 rgba(0, 0, 0, .23);
