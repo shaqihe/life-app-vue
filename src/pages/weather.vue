@@ -86,7 +86,7 @@ export default {
 <style lang="scss">
     @import "../assets/scss/min.scss";
     .page-weather {
-        padding-top: px2rem(88)!important;
+        padding-top: px2rem(78)!important;
         height: 100%;
         background-image: -webkit-linear-gradient(top,#0c264d 0%,#205d91 60%,#2568a1 100%);
         .page-weather-content {
@@ -99,7 +99,7 @@ export default {
             padding: 0 px2rem(32);
             text-shadow: 1px 1px 0 rgba(0, 0, 0, .23);
             color: #fff;
-            font-size: .2rem;
+            font-size: 15px;
             div {
                 height: 22px;
                 line-height: 22px;
@@ -110,7 +110,7 @@ export default {
         }
 
         .page-weather-maininfo {
-            margin-top: 55px;
+            margin-top: 35px;
             .page-weather-maininfo-day {
                 padding: 0 px2rem(32);
                 text-shadow: 1.5px 1.5px 0 rgba(0, 0, 0, .23);
@@ -140,7 +140,7 @@ export default {
             }            
         }
         .page-weather-after {
-            margin-top: 40px;
+            margin-top: 30px;
             padding: px2rem(30) 0;
             background-color: rgba(255, 255, 255, 0.0784314);
             height: px2rem(480);
