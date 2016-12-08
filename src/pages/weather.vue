@@ -94,7 +94,7 @@ export default {
         }
 
         .page-weather-cityrow {
-            margin-top: px2rem(100);
+            margin-top: px2rem(50);
             text-align: right;
             padding: 0 px2rem(32);
             text-shadow: 1px 1px 0 rgba(0, 0, 0, .23);
