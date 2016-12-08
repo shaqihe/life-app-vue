@@ -24,9 +24,30 @@
                         <span class="wa-sg-weather-current-unit">°</span>
                     </span>
                     <span class="info">{{weather.realtime.weather.info}}</span>
+                    <div class="page-weather-maininfo-day_details">
+                        今天： {{weather.weather[0].info.night[2]}}~{{weather.weather[0].info.day[2]}}°C {{weather.weather[0].info.day[1]}} {{weather.weather[0].info.day[3]}} 
+                    </div>
                 </div>
             </div>
-            {{weather.realtime.city_name}}
+            <div class="page-weather-after">
+                <ul>
+                    <li v-for="item in weather.weather" class="page-weather-after_item">
+                        <span>周{{item.week}}</span>
+                        <span class="icon-span"><i class="icon iconfont">&#xe600;</i></span>
+                        <span>
+                            {{item.info.day[2]}}
+                            <span class="span-current-unit">°</span>
+                        </span>
+                        <span class="span-hr"></span>
+                        <span>
+                            {{item.info.night[2]}}
+                            <span class="span-current-unit">°</span>
+                        </span>
+                        <span>{{item.info.day[3]}}</span>
+                        <span>{{item.info.day[4]}}</span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -69,12 +90,13 @@ export default {
         height: 100%;
         background-image: -webkit-linear-gradient(top,#0c264d 0%,#205d91 60%,#2568a1 100%);
         .page-weather-content {
-            padding: px2rem(32)
+            padding: px2rem(32) 0;
         }
 
         .page-weather-cityrow {
-            margin-top: px2rem(100);
+            margin-top: px2rem(200);
             text-align: right;
+            padding: 0 px2rem(32);
             text-shadow: 1px 1px 0 rgba(0, 0, 0, .23);
             color: #fff;
             font-size: .2rem;
@@ -90,6 +112,7 @@ export default {
         .page-weather-maininfo {
             margin-top: 55px;
             .page-weather-maininfo-day {
+                padding: 0 px2rem(32);
                 text-shadow: 1.5px 1.5px 0 rgba(0, 0, 0, .23);
                 color: #fff;
                 .temperature {
@@ -109,8 +132,55 @@ export default {
                 .info {
                     font-size: 50px;
                 }
+
+                .page-weather-maininfo-day_details {
+                    font-size: 18px;
+                    margin: 15px 0 20px 0;
+                }
+            }            
+        }
+        .page-weather-after {
+            margin-top: 40px;
+            padding: px2rem(30) 0;
+            background-color: rgba(255, 255, 255, 0.0784314);
+            height: px2rem(480);
+            .page-weather-after_item {
+                border-right: px2rem(2) solid rgba(255, 255, 255, .1);
+                float: left;
+                height: px2rem(480);
+                width: px2rem(148);
+                span {
+                    position: relative;
+                    display: block;
+                    margin-bottom: 8px;
+                    width: px2rem(148);
+                    font-size: 16px;
+                    color: #fff;
+                    text-align: center;
+                }
+
+                .icon {
+                    font-size: 32px;
+                }
+
+                .icon-span {
+                    margin: 15px 0;
+                }
+
+                .span-current-unit {
+                    position: absolute;
+                    top: -5px;
+                    left: 12px;
+
+                }
+
+                .span-hr {
+                    margin: 5px auto;
+                    height: px2rem(118);
+                    width: 0;
+                    border-right: 1px dashed #fff;
+                }
             }
-            
         }
     }
 
