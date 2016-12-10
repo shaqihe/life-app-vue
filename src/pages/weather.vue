@@ -37,7 +37,9 @@
                 <ul>
                     <li v-for="item in weather.weather" class="page-weather-after_item">
                         <span>周{{item.week}}</span>
-                        <span class="icon-span"><i class="icon iconfont">&#xe600;</i></span>
+                        <span class="icon-span">
+                            {{item.info.day[1]}}
+                        </span>
                         <span>
                             {{item.info.day[2]}}
                             <span class="span-current-unit">°</span>
