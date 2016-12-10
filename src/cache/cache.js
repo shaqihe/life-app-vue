@@ -55,7 +55,7 @@ export  const WeatherCache = {
      * @return {Promise}
      */
     getWeather(data) {
-        let key = '?key=7cc263ec409e69b4aeb54b55639bcc87&cityname=%E5%8C%97%E4%BA%AC&dtype=';
+        let key = '?key=7cc263ec409e69b4aeb54b55639bcc87&';
         return fetch('op/onebox/weather/query' + key + parseParam(data))
             .then(response => response.json()).then(response => response.result.data);
     }

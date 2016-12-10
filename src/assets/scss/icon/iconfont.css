@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1480076873204'); /* IE9*/
-  src: url('iconfont.eot?t=1480076873204#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1480076873204') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1480076873204') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1480076873204#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1481360515824'); /* IE9*/
+  src: url('iconfont.eot?t=1481360515824#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1481360515824') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1481360515824') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1481360515824#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -19,6 +19,8 @@
 .icon-kaixinkefu:before { content: "\e65f"; }
 
 .icon-icon53:before { content: "\e63d"; }
+
+.icon-qiehuan:before { content: "\e6c4"; }
 
 .icon-1:before { content: "\e612"; }
 

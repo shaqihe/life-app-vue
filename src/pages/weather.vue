@@ -13,7 +13,10 @@
         <page-header :pageType="pageType" />
         <div class="page-weather-content"v-if="weather && weather.realtime && weather.weather">
             <div class="page-weather-cityrow">
-                <p>{{weather.realtime.city_name}}</p>
+                <p @touchend="cityChangeShow">
+                    {{weather.realtime.city_name}}
+                     <i class="icon iconfont">&#xe6c4;</i>
+                 </p>
                 <p>{{weather.realtime.date}} 周{{weather.weather[0].week}} {{weather.realtime.moon}}</p>
                 <p class="page-weather-time">{{weather.realtime.time}}</p>
             </div>
@@ -24,6 +27,7 @@
                         <span class="wa-sg-weather-current-unit">°</span>
                     </span>
                     <span class="info">{{weather.realtime.weather.info}}</span>
+                    <span @touchend="cityChangeShow" class="change-city-icon">切换城市 <i class="icon iconfont">&#xe6c4;</i></span>
                     <div class="page-weather-maininfo-day_details">
                         今天： {{weather.weather[0].info.night[2]}}~{{weather.weather[0].info.day[2]}}°C {{weather.weather[0].info.day[1]}} {{weather.weather[0].info.day[3]}} 
                     </div>
@@ -49,31 +53,46 @@
                 </ul>
             </div>
         </div>
+        <transition name="bounce">
+            <citySelect v-show="showSelect" @select="cityChange"/>
+        </transition>
     </div>
 </template>
 
 <script>
-import pageHeader from '../components/Header'
+import pageHeader from '../components/Header';
+import citySelect from '../components/CitySelect';
 import {PAGE_TYPE} from '../common/constant/constant';
-import {WeatherCache} from '../cache/cache'
+import {WeatherCache} from '../cache/cache';
 
 export default {
     name: 'happy',
     data() {
         return {
             pageType: PAGE_TYPE.WEATHER_PAGE,
+            showSelect: false,
+            cityName: localStorage.getItem("lifeCityName") || '北京',
             weather: {}
         }
     },
     components: {
-        pageHeader
+        pageHeader,citySelect
     },
     created() {
         this.getWeather();
     },
     methods: {
+        cityChangeShow(){
+            this.showSelect = !this.showSelect;
+        },
+        cityChange(_data){
+            this.showSelect = false;
+            localStorage.setItem('lifeCityName',_data.selectCity);
+            this.cityName = _data.selectCity;
+            this.getWeather();
+        },
         getWeather() {
-            WeatherCache.getWeather().then(
+            WeatherCache.getWeather({cityname: this.cityName}).then(
                 data => {this.weather = data;},
                 error => {console.log(error)}
             );
@@ -100,17 +119,29 @@ export default {
             text-shadow: 1px 1px 0 rgba(0, 0, 0, .23);
             color: #fff;
             font-size: 15px;
+
             div {
                 height: 22px;
                 line-height: 22px;
             }
+
             .page-weather-time {
                 color: rgba(255, 255, 255, .5);
+            }
+
+            .icon {
+                font-size: 22px;
             }
         }
 
         .page-weather-maininfo {
             margin-top: 35px;
+            .change-city-icon {
+                margin-top: 68px;
+                display: inline-block;
+                float: right;
+            }
+
             .page-weather-maininfo-day {
                 padding: 0 px2rem(32);
                 text-shadow: 1.5px 1.5px 0 rgba(0, 0, 0, .23);
@@ -122,9 +153,9 @@ export default {
                 }
                 
                 .wa-sg-weather-current-unit {
-                    position: absolute;
-                    top: 20px;
-                    left: 60px;
+                    position: relative;
+                    top: -50px;
+                    left: -20px;
                     font-size: 30px;
                     font-weight: bold;
                 }
@@ -181,6 +212,34 @@ export default {
                     border-right: 1px dashed #fff;
                 }
             }
+        }
+    }
+    .bounce-enter-active {
+        animation: bounce-in .5s;
+    }
+    .bounce-leave-active {
+        animation: bounce-out .5s;
+    }
+    @keyframes bounce-in {
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    @keyframes bounce-out {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(0);
         }
     }
 
