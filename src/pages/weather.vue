@@ -56,7 +56,7 @@
             </div>
         </div>
         <transition name="bounce">
-            <citySelect v-show="showSelect" @select="cityChange"/>
+            <citySelect v-show="showSelect" @select="cityChange" @noselect="noselect"/>
         </transition>
     </div>
 </template>
@@ -86,6 +86,9 @@ export default {
     methods: {
         cityChangeShow(){
             this.showSelect = !this.showSelect;
+        },
+        noselect(){
+            this.showSelect = false;
         },
         cityChange(_data){
             this.showSelect = false;

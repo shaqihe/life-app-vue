@@ -14,6 +14,7 @@
             <mt-picker :slots="addressSlots" @change="onAddressChange" :visible-item-count="5"></mt-picker>
             <p class="ux-city-select-content-text">切换为：{{addressProvince}}--{{addressCity}}市</p>
             <div @touchend="select" class="ux-city-select-but">切换城市</div>
+            <div @touchend="noSelect" class="ux-city-select-but no-select">取消切换</div>
         </div>
     </div>
 </template>
@@ -55,6 +56,9 @@
             select(){
                 this.$emit('select', {selectCity: this.addressCity})
             },
+            noSelect(){
+                this.$emit('noselect', {})
+            },
             onAddressChange(picker, values) {
                 picker.setSlotValues(1, CITY[values[0]]);
                 this.addressProvince = values[0];
@@ -64,6 +68,7 @@
     }
 </script>
 <style lang="scss">
+@import "../assets/scss/min.scss";
     .ux-city-select {
         width: 100%;
         height: 100%;
@@ -72,15 +77,24 @@
         top: 0;
         bottom: 0;
         .ux-city-select-content {
-            height: 400px;
-            padding-top: 30px;
+            height: 100%;
             width: 100%;
             background-color: #fff;
             position: absolute;
             bottom: 0;
             border-top: 1px solid #999;
+            .picker {
+                margin-top: px2rem(200);
+                height: 240px;
+                .picker-item {
+                    color: #c8d0d9;
+                }
+                .picker-selected {
+                    color: #0843f6;
+                }
+            }
             .ux-city-select-content-text {
-                margin-top: 30px;
+                margin-top: px2rem(60);
                 text-align: center;
                 color: #18bba8;
                 font-size: 20px;
@@ -96,7 +110,10 @@
             text-align: center;
             font-size: 22px;
             color: #fff;
-            margin: 50px auto;
+            margin: px2rem(100) auto 0;
+        }
+        .no-select {
+            background-color: rgba(37, 72, 145, 0.4);
         }
     }
 </style>
