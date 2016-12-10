@@ -28,11 +28,11 @@ export  const HappyListCache = {
         switch(data.happyType)
         {
         case HAPPY_TYPE.TEXT:
-            return fetch('rand/joke/randJoke.php?' + key + parseParam(data))
+            return fetch('happy/joke/randJoke.php?' + key + parseParam(data))
             .then(response => response.json()).then(response => response.result);
             break;
         case HAPPY_TYPE.IMAGE:
-            return fetch('rand/joke/randJoke.php?type="pic"' + key + parseParam(data))
+            return fetch('happy/joke/randJoke.php?type="pic"' + key + parseParam(data))
             .then(response => response.json()).then(response => response.result);
             break;
         case HAPPY_TYPE.OTHER:

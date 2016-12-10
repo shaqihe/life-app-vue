@@ -29,11 +29,11 @@ module.exports = {
             '^/api': '/'
           }
         },
-        '/rand': {
+        '/happy': {
           target: 'http://v.juhe.cn',
           changeOrigin: true,
           pathRewrite: {
-            '^/rand': '/'
+            '^/happy': '/'
           }
         },
         '/op': {
