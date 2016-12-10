@@ -21,7 +21,7 @@
         created (){
             setTimeout(() => {
                 this.$router.push({ name: 'happy'});
-            },2000);
+            },1500);
         },
         components: {
             Loading

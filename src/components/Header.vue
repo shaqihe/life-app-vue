@@ -30,15 +30,13 @@
                     </router-link>
                 </li>
                 <li>
-
                     <router-link to="/weather" >
-                        <i class="icon iconfont">&#xe766;</i>生活出行
+                        <i class="icon iconfont">&#xe766;</i>天气预报
                     </router-link>
                 </li>
                 <li>
-
-                    <router-link to="/weather" >
-                        <i class="icon iconfont">&#xe600;</i>天气预报
+                    <router-link to="/index" >
+                        <i class="icon iconfont">&#xe600;</i>待定频道
                     </router-link>
                 </li>
             </ul>
