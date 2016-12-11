@@ -126,8 +126,8 @@ export default {
             font-size: 15px;
 
             div {
-                height: 22px;
-                line-height: 22px;
+                height: px2rem(44);
+                line-height: px2rem(44);
             }
 
             .page-weather-time {
@@ -135,14 +135,14 @@ export default {
             }
 
             .icon {
-                font-size: 22px;
+                font-size: px2rem(44);
             }
         }
 
         .page-weather-maininfo {
-            margin-top: 35px;
+            margin-top: px2rem(70);
             .change-city-icon {
-                margin-top: 68px;
+                margin-top: px2rem(126);
                 display: inline-block;
                 float: right;
             }
@@ -152,31 +152,31 @@ export default {
                 text-shadow: 1.5px 1.5px 0 rgba(0, 0, 0, .23);
                 color: #fff;
                 .temperature {
-                    font-size: 100px;
+                    font-size: px2rem(200);
                     position: relative;
                     font-family: 'HelveticaNeue-Thin';
                 }
                 
                 .wa-sg-weather-current-unit {
                     position: relative;
-                    top: -50px;
-                    left: -20px;
-                    font-size: 30px;
+                    top: - px2rem(100);
+                    left: - px2rem(40);
+                    font-size: px2rem(60);
                     font-weight: bold;
                 }
 
                 .info {
-                    font-size: 50px;
+                    font-size: px2rem(100);
                 }
 
                 .page-weather-maininfo-day_details {
                     font-size: 18px;
-                    margin: 15px 0 20px 0;
+                    margin: px2rem(30) 0 px2rem(40) 0;
                 }
             }            
         }
         .page-weather-after {
-            margin-top: 30px;
+            margin-top: px2rem(60);
             padding: px2rem(30) 0;
             background-color: rgba(255, 255, 255, 0.0784314);
             height: px2rem(480);
@@ -184,7 +184,7 @@ export default {
                 border-right: px2rem(2) solid rgba(255, 255, 255, .1);
                 float: left;
                 height: px2rem(480);
-                width: px2rem(148);
+                width: px2rem(146);
                 span {
                     position: relative;
                     display: block;
@@ -196,11 +196,11 @@ export default {
                 }
 
                 .icon {
-                    font-size: 32px;
+                    font-size: px2rem(64);
                 }
 
                 .icon-span {
-                    margin: 15px 0;
+                    margin: px2rem(30) 0;
                 }
 
                 .span-current-unit {

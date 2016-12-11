@@ -84,8 +84,8 @@
             bottom: 0;
             border-top: 1px solid #999;
             .picker {
-                margin-top: px2rem(200);
-                height: 240px;
+                margin-top: px2rem(150);
+                height: px2rem(470);
                 .picker-item {
                     color: #c8d0d9;
                 }
@@ -104,8 +104,8 @@
             background-color: #254891;
             border: 1px solid #ddd;
             border-radius: 10px;
-            height: 48px;
-            line-height: 48px;
+            height: px2rem(96);
+            line-height: px2rem(96);
             width: 80%;
             text-align: center;
             font-size: 22px;
