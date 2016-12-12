@@ -16,7 +16,9 @@
             @click="showMenus">weewe
         </div>
         <div class="nv-toolbar">
-            <div class="toolbar-nav" @click="showMenus"></div>
+            <div class="toolbar-nav" @click="showMenus">
+                <i class="icon iconfont">&#xe726;</i>
+            </div>
             <span class="page-text" v-text="pageType.text"></span>
         </div>
         <section class="nav-list" :class="{ show: showMenu }">
@@ -80,12 +82,16 @@
         width: px2rem(80);
         display: inline-black;
         line-height: px2rem(80);
-        background: url('../assets/images/more.png') no-repeat center center;
         background-size: 19px 16px;
         position: absolute;
         top: 0;
         left: 0;
+        text-align: center;
         z-index:99;
+        i {
+            font-size: 32px;
+            color: #1c8062;
+        }
     }
 
     .page-text {
