@@ -62,6 +62,23 @@ export  const WeatherCache = {
 }
 
 /**
+ *  机器人相关的接口
+ */
+export  const RobotCache = {
+
+    /**
+     * 机器人相关的接口
+     * @param  {Object} Data
+     * @return {Promise}
+     */
+    getWeather(data) {
+        let key = '?key=7cc263ec409e69b4aeb54b55639bcc87&';
+        return fetch('op/robot/index' + key + parseParam(data))
+            .then(response => response.json()).then(response => response.result.data);
+    }
+}
+
+/**
  *  简单封装把对象转换场url参数的字符串
  *  @return {String}
  */
