@@ -10,19 +10,43 @@ export default new Vuex.Store({
             {
                 key: tool.getTimestamp(), //列表key
                 type: USER_TYPE.ROBOT, //类型
-                value: '你好，您有什么需要，可以直接和我对话😁', //内容
+                value: '你好，您有什么需要，可以直接和我对话😁你好，您有什么需要，可以直接和我对话😁', //内容
+                userId: '' //信息发送者
+            },
+            {
+                key: tool.getTimestamp(), //列表key
+                type: USER_TYPE.PEOLE, //类型
+                value: '你好，您有什么需要', //内容
+                userId: '' //信息发送者
+            },
+            {
+                key: tool.getTimestamp(), //列表key
+                type: USER_TYPE.PEOLE, //类型
+                value: '你好，您有什么需要', //内容
+                userId: '' //信息发送者
+            },
+            {
+                key: tool.getTimestamp(), //列表key
+                type: USER_TYPE.PEOLE, //类型
+                value: '你好，您有什么需要', //内容
+                userId: '' //信息发送者
+            },
+            {
+                key: tool.getTimestamp(), //列表key
+                type: USER_TYPE.PEOLE, //类型
+                value: '你好，您有什么需要', //内容
+                userId: '' //信息发送者
+            },
+            {
+                key: tool.getTimestamp(), //列表key
+                type: USER_TYPE.PEOLE, //类型
+                value: '你好，您有什么需要', //内容
                 userId: '' //信息发送者
             },
             {
                 key: tool.getTimestamp(), //列表key
                 type: USER_TYPE.ROBOT, //类型
-                value: '你好，您有什么需要，可以直接和我对话😁', //内容
-                userId: '' //信息发送者
-            },
-            {
-                key: tool.getTimestamp(), //列表key
-                type: USER_TYPE.ROBOT, //类型
-                value: '你好，您有什么需要，可以直接和我对话😁', //内容
+                value: '你好，您有什么需要你好，您有什么需要，可以直接和我对话😁', //内容
                 userId: '' //信息发送者
             }
         ],
