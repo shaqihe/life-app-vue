@@ -12,6 +12,18 @@ export default new Vuex.Store({
                 type: USER_TYPE.ROBOT, //类型
                 value: '你好，您有什么需要，可以直接和我对话😁', //内容
                 userId: '' //信息发送者
+            },
+            {
+                key: tool.getTimestamp(), //列表key
+                type: USER_TYPE.ROBOT, //类型
+                value: '你好，您有什么需要，可以直接和我对话😁', //内容
+                userId: '' //信息发送者
+            },
+            {
+                key: tool.getTimestamp(), //列表key
+                type: USER_TYPE.ROBOT, //类型
+                value: '你好，您有什么需要，可以直接和我对话😁', //内容
+                userId: '' //信息发送者
             }
         ],
         loading: false //全局的loading效果
