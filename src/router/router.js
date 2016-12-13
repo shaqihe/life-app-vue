@@ -43,6 +43,13 @@ const routes = [
       }
     },
     {
+      path: "/robot",
+      name: "robot",
+      component: (resolve) => {
+          require(["../pages/robot.vue"], resolve);
+      }
+    },
+    {
         path: '*',
         redirect: {
             name: "index",

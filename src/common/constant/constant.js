@@ -26,7 +26,24 @@ export const PAGE_TYPE = {
         text: "天气预报",
         className: "weather-page",
         value: 2
+    },
+
+    //机器人页面
+    ROBOT_PAGE: {
+        text: "智能百晓通",
+        className: "robot-page",
+        value: 3
     }
+};
+
+
+/**
+ * 用户类型的常量
+ *
+ */
+export const USER_TYPE = {
+    ROBOT: 1,
+    PEOLE: 2
 };
 
 /**

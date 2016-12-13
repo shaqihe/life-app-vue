@@ -9,27 +9,28 @@
  * ----------------------------------------------------------
  */
 <template>
-    <i class="icon iconfont go-top-icon"  v-show="show" @click="goTop">&#xe807;</i>
+    <div>
+        <ul>
+            <li v-for="item in messageList">
+                {{item.value}}
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script>
     import tool from '../common/util/tool'
     export default {
-        replace:true,
+        name: 'messageList',
         data (){
             return {
                 show: false,
             }
         },
-        created (){
-            window.onscroll = (e) => {
-                if(tool.getScrollTop() > 100){
-                    this.show = true;
-                }
+        computed: {
+            messageList () {
+                return this.$store.getters.getMessages
             }
-        },
-        beforeDestory (){
-            window.onscroll = null;
         },
         methods:{
             goTop (){
@@ -40,6 +41,7 @@
     }
 </script>
 <style lang="scss">
+@import "../assets/scss/min.scss";
     .go-top-icon {
         position: fixed;
         right: 10px;

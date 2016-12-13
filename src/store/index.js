@@ -1,14 +1,16 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import tool from '../common/util/tool'
+import {USER_TYPE} from '../common/constant/constant'
 
 Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         messages: [
             {
-                key: '', //列表key
-                type: '', //类型
-                value: '', //内容
+                key: tool.getTimestamp(), //列表key
+                type: USER_TYPE.ROBOT, //类型
+                value: '你好，您有什么需要，可以直接和我对话😁', //内容
                 userId: '' //信息发送者
             }
         ],

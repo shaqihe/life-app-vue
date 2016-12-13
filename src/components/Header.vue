@@ -37,8 +37,8 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/index" >
-                        <i class="icon iconfont">&#xe600;</i>待定频道
+                    <router-link to="/robot" >
+                        <i class="icon iconfont">&#xe600;</i>万能机器人
                     </router-link>
                 </li>
             </ul>

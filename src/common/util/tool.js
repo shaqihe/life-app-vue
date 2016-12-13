@@ -29,4 +29,11 @@ tool.getScrollTop = () => {
     return scrollTop;
 }
 
+/**
+ * 获取时间戳
+ */
+tool.getTimestamp = () => {
+    return new Date().getTime();
+}
+
 export default tool;
