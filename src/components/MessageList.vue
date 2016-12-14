@@ -19,9 +19,9 @@
                 </div>
             </li>
         </ul>
-        <div class="ux-message-list-post" @click="sendMessage">
-            <input type="text"/>
-            <span class="ux-message-list-send-but">发送</span>
+        <div class="ux-message-list-post">
+            <input type="text" v-model="message" @keyup.enter="sendMessage"/>
+            <span class="ux-message-list-send-but" @click="sendMessage">发送</span>
         </div>
     </div>
 </template>
@@ -33,7 +33,8 @@
         name: 'messageList',
         data (){
             return {
-                USER_TYPE: USER_TYPE
+                USER_TYPE: USER_TYPE,
+                message: ''
             }
         },
         computed: {
@@ -45,13 +46,16 @@
             sendMessage () {
                  this.$store.dispatch('pushMassages',
                 {
-                    key: 12321, //列表key
+                    key: tool.getTimestamp(), //列表key
                     type: USER_TYPE.PEOLE, //类型
-                    value: '你好，您有什么需要', //内容
+                    value: this.message, //内容
                     userId: '' //信息发送者
+                }).then(data =>{
+                    this.message = '';
+                    document.getElementById('msg-end').scrollTop = 
+                    document.getElementById('msg-end').scrollHeight;
                 });
-                 document.getElementById('msg-end').scrollTop = 
-                 document.getElementById('msg-end').scrollHeight;
+                 
             }
         }
     }
@@ -158,6 +162,7 @@
                 margin: 0 0 0 px2rem(18);
                 border: 1px solid #e9e9eb;
                 border-radius: 12px;
+                font-size: 16px;
             }
             .ux-message-list-send-but {
                 display: inline-block;
