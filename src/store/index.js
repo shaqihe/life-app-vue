@@ -12,42 +12,6 @@ export default new Vuex.Store({
                 type: USER_TYPE.ROBOT, //类型
                 value: '你好，您有什么需要，可以直接和我对话😁你好，您有什么需要，可以直接和我对话😁', //内容
                 userId: '' //信息发送者
-            },
-            {
-                key: tool.getTimestamp(), //列表key
-                type: USER_TYPE.PEOLE, //类型
-                value: '你好，您有什么需要', //内容
-                userId: '' //信息发送者
-            },
-            {
-                key: tool.getTimestamp(), //列表key
-                type: USER_TYPE.PEOLE, //类型
-                value: '你好，您有什么需要', //内容
-                userId: '' //信息发送者
-            },
-            {
-                key: tool.getTimestamp(), //列表key
-                type: USER_TYPE.PEOLE, //类型
-                value: '你好，您有什么需要', //内容
-                userId: '' //信息发送者
-            },
-            {
-                key: tool.getTimestamp(), //列表key
-                type: USER_TYPE.PEOLE, //类型
-                value: '你好，您有什么需要', //内容
-                userId: '' //信息发送者
-            },
-            {
-                key: tool.getTimestamp(), //列表key
-                type: USER_TYPE.PEOLE, //类型
-                value: '你好，您有什么需要', //内容
-                userId: '' //信息发送者
-            },
-            {
-                key: tool.getTimestamp(), //列表key
-                type: USER_TYPE.ROBOT, //类型
-                value: '你好，您有什么需要你好，您有什么需要，可以直接和我对话😁', //内容
-                userId: '' //信息发送者
             }
         ],
         loading: false //全局的loading效果
@@ -62,7 +26,7 @@ export default new Vuex.Store({
     },
     mutations: {
         pushMassages: (state, message) => {
-            state.messages = state.messages.push(message);
+            state.messages.push(message);
         },
         clearMassages: state => {
             state.massages = [];
@@ -74,9 +38,9 @@ export default new Vuex.Store({
     actions: {
         pushMassages: ({
             commit
-        }, user) => {
+        }, message) => {
             return new Promise(function(resolve, reject) {
-                commit("pushMassages", user);
+                commit("pushMassages", message);
                 resolve();
             });
         },

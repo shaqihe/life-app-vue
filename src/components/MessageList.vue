@@ -10,7 +10,7 @@
  */
 <template>
     <div class="ux-message-list">
-        <ul class="ux-message-list-ul">
+        <ul class="ux-message-list-ul" id="msg-end">
             <li class="ux-message-list-item" :class="{'ux-message-list-right': item.type==USER_TYPE.PEOLE }" v-for="item in messageList">
                 <img class="ux-message-list-my-img" src="http://7xqd2y.com1.z0.glb.clouddn.com/images11.jpg">
                 <div class="ux-message-text">
@@ -19,7 +19,10 @@
                 </div>
             </li>
         </ul>
-         <input type="text"/>
+        <div class="ux-message-list-post" @click="sendMessage">
+            <input type="text"/>
+            <span class="ux-message-list-send-but">发送</span>
+        </div>
     </div>
 </template>
 
@@ -35,23 +38,38 @@
         },
         computed: {
             messageList () {
-                return this.$store.getters.getMessages
+                return this.$store.getters.getMessages;
             }
         },
         methods:{
-            goTop (){
-                document.body.scrollTop = 0;
-                this.show = false;
+            sendMessage () {
+                 this.$store.dispatch('pushMassages',
+                {
+                    key: 12321, //列表key
+                    type: USER_TYPE.PEOLE, //类型
+                    value: '你好，您有什么需要', //内容
+                    userId: '' //信息发送者
+                });
+                 document.getElementById('msg-end').scrollTop = 
+                 document.getElementById('msg-end').scrollHeight;
             }
         }
     }
 </script>
 <style lang="scss">
 @import "../assets/scss/min.scss";
+    body {
+        background: #ebebeb;
+    }
     .ux-message-list {
         padding-top: px2rem(40); 
         .ux-message-list-ul {
-            height: px2rem(940);
+            height: 100%;
+            padding-bottom: px2rem(130); 
+            position: fixed;
+            bottom: 0;
+            top: 0;
+            margin-top: px2rem(96); 
             overflow: scroll;
         }
         .ux-message-list-item {
@@ -96,6 +114,7 @@
                 _filter: chroma(color=#FF3FFF);
             }
         }
+
         .ux-message-list-right {
             float: right;
             .ux-message-list-my-img {
@@ -105,6 +124,7 @@
             .ux-message-text {
                 float: right;
                 margin-right: 10px;
+                background: #a2e65b;
                 .triangle {
                     display: inline-block;
                     position: absolute;
@@ -115,13 +135,38 @@
                     line-height: 0;
                     font-size: 0;
                     vertical-align: middle;
-                    border-left: 7px solid #fff;
+                    border-left: 7px solid #a2e65b;
                     border-right: 0 none;
                     border-top: 7px solid transparent;
                     border-bottom: 7px solid transparent;
                     _color: #FF3FFF;
                     _filter: chroma(color=#FF3FFF);
                 }
+            }
+        }
+
+        .ux-message-list-post {
+            height: px2rem(120); 
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+            background: #f5f5f7;
+            border-top: 2px solid #e9e9eb;
+            input {
+                width: px2rem(600);
+                height: px2rem(80);
+                margin: 0 0 0 px2rem(18);
+                border: 1px solid #e9e9eb;
+                border-radius: 12px;
+            }
+            .ux-message-list-send-but {
+                display: inline-block;
+                padding-left: px2rem(15);
+                width: px2rem(95);
+                height: px2rem(120);
+                line-height: px2rem(120);
+                font-size: 16px;
+                color: #11bc80;
             }
         }
     }
