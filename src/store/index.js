@@ -26,14 +26,14 @@ export default new Vuex.Store({
                 userId: '' //信息发送者
             },
         ],
-        loading: false //全局的loading效果
+        userId: tool.getTimestamp() //初始化一个ID，用来承接机器人对话的上下文
     },
     getters: {
         getMessages: state => {
             return state.messages || [];
         },
-        getLoading: state => {
-            return state.loading;
+        getUserId: state => {
+            return state.userId;
         }
     },
     mutations: {

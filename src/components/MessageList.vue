@@ -29,6 +29,7 @@
 <script>
     import tool from '../common/util/tool'
     import {USER_TYPE} from '../common/constant/constant'
+    import {RobotCache} from '../cache/cache';
     export default {
         name: 'messageList',
         data (){
@@ -38,8 +39,11 @@
             }
         },
         computed: {
-            messageList () {
+            messageList() {
                 return this.$store.getters.getMessages;
+            },
+            userId() {
+                return this.$store.getters.getUserId;
             }
         },
         methods:{
@@ -51,11 +55,21 @@
                     value: this.message, //内容
                     userId: '' //信息发送者
                 }).then(data =>{
-                    this.message = '';
-                    document.getElementById('msg-end').scrollTop = 
-                    document.getElementById('msg-end').scrollHeight;
+                    RobotCache.getWeather({info: this.message,userid: this.userId}).then(data =>{
+                         this.$store.dispatch('pushMassages',{
+                            key: tool.getTimestamp(), //列表key
+                            type: USER_TYPE.ROBOT, //类型
+                            value: data, //内容
+                            userId: '' //信息发送者
+                         }).then(data =>{this.clearInput()});
+                        
+                    })
                 });
-                 
+            },
+            clearInput() {
+                this.message = '';
+                document.getElementById('msg-end').scrollTop = 
+                document.getElementById('msg-end').scrollHeight;
             }
         }
     }
@@ -68,7 +82,6 @@
     .ux-message-list {
         padding-top: px2rem(40); 
         .ux-message-list-ul {
-            height: 100%;
             padding-bottom: px2rem(130); 
             position: fixed;
             bottom: 0;

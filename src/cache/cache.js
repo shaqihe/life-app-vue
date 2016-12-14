@@ -72,9 +72,9 @@ export  const RobotCache = {
      * @return {Promise}
      */
     getWeather(data) {
-        let key = '?key=7cc263ec409e69b4aeb54b55639bcc87&';
+        let key = '?key=50cd35eb206526335a1c1e0f149f98a5&';
         return fetch('op/robot/index' + key + parseParam(data))
-            .then(response => response.json()).then(response => response.result.data);
+            .then(response => response.json()).then(response => response.result.text);
     }
 }
 
