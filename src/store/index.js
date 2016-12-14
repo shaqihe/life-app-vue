@@ -10,9 +10,21 @@ export default new Vuex.Store({
             {
                 key: tool.getTimestamp(), //列表key
                 type: USER_TYPE.ROBOT, //类型
-                value: '你好，您有什么需要，可以直接和我对话😁你好，您有什么需要，可以直接和我对话😁', //内容
+                value: '你好，您有什么需要，可以直接和我对话😁', //内容
                 userId: '' //信息发送者
-            }
+            },
+            {
+                key: tool.getTimestamp(), //列表key
+                type: USER_TYPE.ROBOT, //类型
+                value: '可以问我，天气、出行、各种问题😄', //内容
+                userId: '' //信息发送者
+            },
+            {
+                key: tool.getTimestamp(), //列表key
+                type: USER_TYPE.ROBOT, //类型
+                value: '只有你想不到的，没有我答不来的，哈哈哈😁', //内容
+                userId: '' //信息发送者
+            },
         ],
         loading: false //全局的loading效果
     },
