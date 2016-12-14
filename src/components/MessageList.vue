@@ -10,7 +10,7 @@
  */
 <template>
     <div class="ux-message-list">
-        <ul class="ux-message-list-ul" id="msg-end">
+        <ul class="ux-message-list-ul" id="msg-end" @click="contract">
             <li class="ux-message-list-item" :class="{'ux-message-list-right': item.type==USER_TYPE.PEOLE }" v-for="item in messageList">
                 <img class="ux-message-list-my-img" src="http://7xqd2y.com1.z0.glb.clouddn.com/images11.jpg">
                 <div class="ux-message-text">
@@ -47,7 +47,12 @@
             }
         },
         methods:{
+            contract() {},
+            //发送消息
             sendMessage () {
+                if (this.message == '') {
+                    return;
+                }
                  this.$store.dispatch('pushMassages',
                 {
                     key: tool.getTimestamp(), //列表key
@@ -66,6 +71,7 @@
                     })
                 });
             },
+            //清空输入框
             clearInput() {
                 this.message = '';
                 document.getElementById('msg-end').scrollTop = 
