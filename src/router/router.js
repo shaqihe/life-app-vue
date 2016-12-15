@@ -50,6 +50,13 @@ const routes = [
       }
     },
     {
+      path: "/about",
+      name: "about",
+      component: (resolve) => {
+          require(["../pages/about.vue"], resolve);
+      }
+    },
+    {
         path: '*',
         redirect: {
             name: "index",

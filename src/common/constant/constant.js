@@ -33,6 +33,12 @@ export const PAGE_TYPE = {
         text: "智能百晓通",
         className: "robot-page",
         value: 3
+    },
+
+    ABOUT_PAGE: {
+        text: "关于我",
+        className: "robot-about",
+        value: 4
     }
 };
 

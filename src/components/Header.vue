@@ -41,6 +41,11 @@
                         <i class="icon iconfont">&#xe600;</i>万能机器人
                     </router-link>
                 </li>
+                 <li>
+                    <router-link to="/about" >
+                        <i class="icon iconfont">&#xe65f;</i>关于我
+                    </router-link>
+                </li>
             </ul>
         </section>
     </div>
