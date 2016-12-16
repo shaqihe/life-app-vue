@@ -10,7 +10,7 @@
  */
 <template>
     <!-- 全局header -->
-    <div class="page-robot">
+    <div class="page-robot page">
         <page-header :pageType="pageType"/>
         <messageList/>
     </div>

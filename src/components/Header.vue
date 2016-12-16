@@ -10,7 +10,7 @@
  */
 
 <template>
-    <div :class="pageType.className">
+    <div :class="pageType.className" class="ux-header">
         <div class="page-cover"
             v-if="showMenu"
             @click="showMenus">weewe
@@ -70,9 +70,12 @@
 
 <style lang="scss">
 @import "../assets/scss/min.scss";
-
+.ux-header {
+    max-width: 700px;
+}
 .nv-toolbar {
     height: px2rem(86);
+    max-width: 700px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
     position: fixed;

@@ -88,6 +88,7 @@
     .ux-message-list {
         padding-top: px2rem(40); 
         .ux-message-list-ul {
+            max-width: 700px;
             padding-bottom: px2rem(130); 
             position: fixed;
             bottom: 0;

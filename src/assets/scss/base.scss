@@ -19,5 +19,9 @@ textarea:focus{outline:0;}
 a{text-decoration:none;}
 .clearfix:after{display:block;clear:both;visibility:hidden;height:0;content:" ";font-size:0;}
 .clearfix{*zoom:1;}
+.page {
+    max-width: 700px;
+    margin: 0 auto;
+}
 
 @import "min.scss";

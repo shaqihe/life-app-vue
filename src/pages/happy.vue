@@ -9,7 +9,7 @@
  * ----------------------------------------------------------
  */
 <template>
-    <div class="page-happy">
+    <div class="page-happy page">
         <page-header :pageType="pageType" />
         <!-- 首页列表 -->
         <nav class="page-happy－nav">

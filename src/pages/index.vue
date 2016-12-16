@@ -10,7 +10,7 @@
  */
 <template>
     <!-- 全局header -->
-    <div>
+    <div class="page">
         <img class="index" src="../assets/images/5.jpeg">
         <loading></loading>
     </div>

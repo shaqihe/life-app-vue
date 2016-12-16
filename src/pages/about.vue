@@ -9,7 +9,7 @@
  * ----------------------------------------------------------
  */
 <template>
-    <div class="page-about">
+    <div class="page-about page">
         <!-- 全局header -->
         <page-header :pageType="pageType" />
         <p class="page-about-title">项目采用vue前端框架，代码开源。</p>

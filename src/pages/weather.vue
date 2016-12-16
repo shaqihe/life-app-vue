@@ -9,7 +9,7 @@
  * ----------------------------------------------------------
  */
 <template>
-    <div class="page-weather">
+    <div class="page-weather page">
         <page-header :pageType="pageType" />
         <div class="page-weather-content"v-if="weather && weather.realtime && weather.weather">
             <div class="page-weather-cityrow">
