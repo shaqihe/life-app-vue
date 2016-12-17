@@ -13,8 +13,8 @@
         <!-- 全局header -->
         <page-header :pageType="pageType" />
         <p class="page-about-title">项目采用vue前端框架，代码开源。</p>
-        <p class="page-about-title"><a href="https://github.com/shaqihe/life-app-vue">代码github链接(点个star)</a></p>
-        <p class="page-about-title"><a href="http://shaqihe.top/">我博客链接</a></p>
+        <p class="page-about-title"><a href="https://github.com/shaqihe/life-app-vue"> 代码github链接(点个star)</a></p>
+        <p class="page-about-title"><a href="http://shaqihe.top/"> 我博客链接</a></p>
     </div>
 </template>
 <script>
