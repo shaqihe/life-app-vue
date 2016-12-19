@@ -10,7 +10,7 @@
 # install dependencies
 第一步：npm install（用淘宝的cnpm代理安装会更快，方法是：1.安装cnpm：npm install -g cnpm --registry=https://registry.npm.taobao.org   2.用cnpm代理npm安装： cnpm install）
 
-# serve with hot reload at localhost:808
+# serve with hot reload at localhost:8088
 第二步：npm run dev
 
 
