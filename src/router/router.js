@@ -50,6 +50,13 @@ const routes = [
       }
     },
     {
+      path: "/music",
+      name: "music",
+      component: (resolve) => {
+          require(["../pages/music.vue"], resolve);
+      }
+    },
+    {
       path: "/about",
       name: "about",
       component: (resolve) => {
