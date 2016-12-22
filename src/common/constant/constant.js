@@ -39,6 +39,11 @@ export const PAGE_TYPE = {
         text: "关于我",
         className: "robot-about",
         value: 4
+    },
+    MUSIC: {
+        text: "音乐",
+        className: "robot-music",
+        value: 5
     }
 };
 
