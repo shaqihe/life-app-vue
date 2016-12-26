@@ -45,4 +45,4 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 
   [1]: http://test.clibchina.com/#/index
-  [1]: http://shaqihe.top/
+  [2]: http://shaqihe.top/
