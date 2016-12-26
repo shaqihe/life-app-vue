@@ -32,6 +32,9 @@ npm run build
 
 **过几天会总结几个点的心得，包括下面几点：**
 
+在博客里我会陆续记录下开发的一些东西：
+[博客链接，点击查看][2]
+
  - 项目的目录划分，vue的使用心得
  - 发布环境，前端代码单独部署，如何配合nginx
  - nginx的一些配置，和前后端分离异步接口反向代理
@@ -42,3 +45,4 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 
   [1]: http://test.clibchina.com/#/index
+  [1]: http://shaqihe.top/
