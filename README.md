@@ -3,13 +3,20 @@
 > A Vue.js project
 
 ## 点个star 收藏一下岂不是更好😆！
-[博客链接，点击查看(我会陆续更新一下这个demo的几个点，如：文件划分、接口代理、nginx配置、性能优化等)][2]
+[博客链接，点击查看(我会陆续更新一下这个demo的几个点，如：文件划分、接口代理、nginx配置、缓存优化等)][2]
 ## Build Setup
 
 ``` bash
 本地调试启动：
+
+第零步：代码clone到本地： git clone https://github.com/shaqihe/life-app-vue.git
+
 # install dependencies
-第一步：npm install（用淘宝的cnpm代理安装会更快，方法是：1.安装cnpm：npm install -g cnpm --registry=https://registry.npm.taobao.org   2.用cnpm代理npm安装： cnpm install）
+第一步：npm install（
+           或者用淘宝的cnpm代理安装会更快，方法是：
+             1.安装cnpm：npm install -g cnpm --registry=https://registry.npm.taobao.org 
+             2.用cnpm代理npm安装： cnpm install
+       ）
 
 # serve with hot reload at localhost:8088
 第二步：npm run dev
