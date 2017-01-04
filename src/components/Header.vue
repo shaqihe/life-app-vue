@@ -70,6 +70,10 @@
 
 <style lang="scss">
 @import "../assets/scss/min.scss";
+.page-about {
+    height: 100%;
+}
+
 .ux-header {
     max-width: 700px;
 }
@@ -116,12 +120,14 @@
 }
 
 .nav-list {
-    background: url('../assets/images/5.jpeg');
+    background: url('../assets/images/5fe.jpg');
+    background-size: 100% 100%;  
     position: fixed;
     top: 0;
     bottom: 0;
     left: -200px;
     width: 200px;
+    height: 100%;
     background-color: #fff;
     color: #0cf1d6;
     transition: all .3s ease;
