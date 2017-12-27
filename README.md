@@ -51,5 +51,5 @@ npm run build
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 
-  [1]: http://test.clibchina.com/#/index
+  [1]: http://happy.g1024.top/
   [2]: http://shaqihe.github.io/
