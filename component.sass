@@ -1,0 +1,131 @@
+// 整个区域的宽度
+$fullWidth: 1080px;
+
+// 橘红色
+$orangeColor: #FF4302;
+
+// 淡黄色
+$lightYellowColor: #FEF8E2;
+$lightBlueColor: #CEE8FF;
+
+$c333: #333;
+$c666: #666;
+$c999: #999;
+$vw_base: 750;
+@function vw($px) {
+  @return ($px / $vw_base) * 100vw;
+}
+
+html, body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: $c999;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+#app, .page-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.page-content {
+  margin-top: 100px;
+}
+
+.clear:after {
+  display: block;
+  content: '';
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+//font
+
+.text-center {
+  text-align: center;
+}
+
+//字体
+.f12 {
+  font-size: 12px;
+}
+
+.f14 {
+  font-size: 14px;
+}
+
+.f28 {
+  font-size: 28px;
+}
+
+.f36 {
+  font-size: 36px;
+}
+
+.font-weight-bold {
+  font-weight: bold;
+}
+
+//color
+
+.c666 {
+  color: #666;
+}
+
+.c333 {
+  color: #333;
+}
+
+.c999 {
+  color: #999;
+}
+
+//background
+
+.bgfff {
+  background-color: #fff;
+}
+
+:global {
+  .g-robot-e {
+    right: 0;
+  }
+}

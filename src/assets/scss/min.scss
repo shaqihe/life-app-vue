@@ -1,9 +1,0 @@
-//基础font-size js会根据手机宽度计算
-$font:16;
-//设计稿宽度
-$screen:750;
-
-@function px2rem($n){
-  @return #{$n/($screen*$font/375)}rem
-}
-
